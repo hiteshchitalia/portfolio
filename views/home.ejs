@@ -1,0 +1,55 @@
+<% include partials/header %>
+
+  <div class="container">
+     <div class="jumbotron">
+         <h1>Learn <i class="fa fa-chevron-right" aria-hidden="true"></i> Build<i class="fa fa-chevron-right" aria-hidden="true"></i> Measure <i class="fa fa-chevron-right" aria-hidden="true"></i> Innovate<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></h1>
+         <p>A transformation journey</p>
+     </div>
+  
+  <!-- Message area -->
+    <div class="containerBox">
+      <% if(error && error.length > 0) { %>
+        <div class="alert alert-danger"><p><%= error %></p></div>
+      <% } %>
+      
+      <% if(success && success.length > 0) { %>
+        <div class="alert alert-success"><p><%= success %></p></div>
+      <% } %>
+    </div>
+  <!-- End message area -->	 
+
+    <div class="awscerts">
+      <img src="/images/Solutions-Architect-Associate.png">
+      <img src="/images/Developer-Associate.png">
+      <img src="/images/SysOps-Administrator-Associate.png">
+    </div>
+
+   <div class="blogTitle"><h1>Learn</h1></div>
+   <div class="blogText blogPost"><p>When I lost my job, I was first and foremost shocked. I did not expect it.  I decided to start a transformation journey by diving deeper into Amazon Web Services (AWS).  The best way in my opinion was to get certified.  After 6 weeks of studying and preparation, I obtained all three Associate Level certifications.  The certifications have <strong>not</strong> been enough to entice employers, so I continued the transformation journey by brushing off my coding skills.  I had not coded for a long time and needed a refresher.  I signed up for two bootcamp courses on Node, Javascript, HTML, CSS.</p></div> 
+   
+   <div class="blogTitle"><h1>Build</h1></div>
+   <div class="blogText blogPost"><p>Below are some "highlights" of my journey - simple applications that were in the courses that I replicated and built up.</p></div>
+
+    <a class="btn btn-primary" role="button" href="/colorpicker">Color picker game</a>
+    <a class="btn btn-primary" role="button" href="/todolist">To Do list</a>
+    <a class="btn btn-primary" role="button" href="/moviesearch">Movie Search using OMDb API</a>
+
+   <div class="blogTitle"><h1>Measure</h1></div>
+   <div class="blogText blogPost"><p>Send me your feedback!  I would love to hear from you.  You feedback will be valuable to me as I continue to expand my skills.</p></div>
+
+   <form action="/feedback" method="POST">
+    <div class="containerBox">
+      <div class="form-group">
+        <label class="sr-only" id="feedback" for="feedback">Feedback</label>
+        <textarea class="form-control" cols="50" rows="3" placeholder="Submit your feedback" name="fb" id="feedback"></textarea>
+      </div>
+      <button style="float: right" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+   </form>
+
+   <div class="blogTitle"><h1>Innovate</h1></div>
+   <div class="blogText blogPost"><p>Use AWS services and serverless computing for future sample apps as I prepare for the AWS Professional Level certifications. </p></div>
+
+  </div>
+
+<% include partials/footer %>

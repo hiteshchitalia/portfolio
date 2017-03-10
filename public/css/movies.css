@@ -1,0 +1,9 @@
+.listBox {
+    width: 75%;
+    margin: auto;
+}
+
+#searchBoxLabel {
+    font-size: 1.5em;
+    padding-left: 2px;
+}

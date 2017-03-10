@@ -1,0 +1,25 @@
+<% include partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/movies.css">
+
+  <div class="container">
+    <div class="jumbotron">Details for <%= movie.Title %></div>
+
+    <div class="row">
+      <div class="col-lg-4"><img src="<%= movie.Poster %>"></div>
+      <div class="col-lg-6">
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Year</strong> : <%= movie.Year %></li>
+          <li class="list-group-item"><strong>Rated</strong> : <%= movie.Rated %></li>
+          <li class="list-group-item"><strong>Runtime</strong> : <%= movie.Runtime %></li>
+          <li class="list-group-item"><strong>Metascore</strong> : <%= movie.Metascore %></li>
+          <li class="list-group-item"><strong>imdbRating</strong> : <%= movie.imdbRating %></li>
+          <li class="list-group-item"><strong>imdbVotes</strong> : <%= movie.imdbVotes %></li>
+          <li class="list-group-item"><strong>Actors</strong> : <%= movie.Actors %></li>
+          <li class="list-group-item"><strong>Plot</strong> : <%= movie.Plot %></li>
+        </ul>    
+      <button type="button" class="btn btn-primary" onclick="javascript:history.back()">Back</button>
+      </div>
+    </div>    
+  </div>
+
+<% include partials/footer %>

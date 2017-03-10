@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+  <link rel="stylesheet" type="text/css" href="/css/colorPicker.css">
+
+  <div class="container">
+    <div class="jumbotron"><h1>Color Picker Game</h1>
+        <p><span id="rgbValue"></span></p>
+        <p>Guess the color indicated by the RGB (Red, Green, Blue) code</span></p>
+    </div>
+    <div class="container">
+        <div class="row" id="menuBar">
+            <div class="col-lg-4"><button id="reset">New Game</button></div>
+            <div class="col-lg-4"><span id="status"></span></div>
+            <div class="col-lg-4"><button id="easy">Easy</button> <button id="hard">Hard</button></div>
+        </div>   
+    </div>           
+  </div>
+  <div id="colorContainer">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+  </div>
+  
+  <script type="text/javascript" src="/js/colorPicker.js"></script>
+<% include partials/footer %>

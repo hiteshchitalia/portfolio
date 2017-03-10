@@ -1,0 +1,18 @@
+<% include partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/movies.css">
+
+  <div class="container">
+    <div class="jumbotron">Results of the search query: <%= query %></div>
+  </div>
+  <div class="container">
+  <div class="listBox">
+        <ul class="list-group">
+        <% data.Search.forEach(function(movie){ %>
+            <li class="list-group-item"><a href="/movieresult/<%= movie.imdbID %>"><%= movie.Title %></a></li>
+        <% }) %>
+        </ul>
+        <a class="btn btn-primary" href="/moviesearch" role="button">Search Again</a>
+  </div>
+  </div>
+
+<% include partials/footer %>

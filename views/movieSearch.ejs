@@ -1,0 +1,23 @@
+<% include partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/movies.css">
+
+  <div class="container">
+    <div class="jumbotron"><h1>Search the Movie Database!</h1>
+        <p>This application using the <a href="http://www.omdbapi.com" target="_blank">OMDb API</a> to show your results.  
+        It is an example of how to integrate with APIs using Node and Express</p>
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="listBox">
+    <form action="/movieresult" method="GET">
+        <div class="form-group">
+            <label id="searchBoxLabel" for="searchTerm">Search the Movie Database</label>
+            <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Enter term">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  </div>
+
+<% include partials/footer %>
