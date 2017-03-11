@@ -1,4 +1,10 @@
 node_modules/
 .DS_Store
 .vscode
+user-data.txt
+.gitignore
 
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

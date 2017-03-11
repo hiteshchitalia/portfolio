@@ -1,21 +1,25 @@
 var bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
-  mongoose = require('mongoose'),
+  AWS = require('aws-sdk'),
+  uuid = require('node-uuid'),
   request = require('request'),
   express = require('express'),
-  Feedback = require('./models/feedback'),
   session = require('express-session'),
   cookieParser = require('cookie-parser'),
   flash = require('connect-flash'),
   app = express()
 
-// Connect to MongoDB
-mongoose.connect("mongodb://localhost/portfolio");
+// Configure AWS
+AWS.config.update( {
+  region: "us-east-1",
+  endpoint: "https://dynamodb.us-east-1.amazonaws.com"
+})
+var docClient = new AWS.DynamoDB.DocumentClient();
 
 // APP CONFIG
 app.set('view engine', 'ejs')
 app.set('port', process.env.PORT || 3000)
-app.set('host', process.env.IP || 'localhost')
+app.set('host', process.env.HOST || 'localhost')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -89,13 +93,17 @@ app.get('/movieresult', function (req, res) {
 })
 
 app.post('/feedback', function (req, res) {
-    var fb = {feedbackText: req.body.fb};
-    Feedback.create(fb, function(err, newlyCreated) {
+    var id = uuid.v1()
+    var fb = {id: id, feedbackText: req.body.fb};
+    var params = {
+      TableName: "Portfolio",
+      Item: fb
+    }
+    docClient.put(params, function(err, newlyCreated) {
         if (err) {
           req.flash("error", "Error connecting to database.  Feedback not saved.")
-          console.log(req.flash("error"))
         } else {
-          newlyCreated.save();
+          //newlyCreated.save();
           req.flash("success", "Thanks for your feedback!")
         }
     })
