@@ -5,18 +5,6 @@
          <h1>Learn <i class="fa fa-chevron-right" aria-hidden="true"></i> Build<i class="fa fa-chevron-right" aria-hidden="true"></i> Measure <i class="fa fa-chevron-right" aria-hidden="true"></i> Innovate<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></h1>
          <p>A transformation journey</p>
      </div>
-  
-  <!-- Message area -->
-    <div class="containerBox">
-      <% if(error && error.length > 0) { %>
-        <div class="alert alert-danger"><p><%= error %></p></div>
-      <% } %>
-      
-      <% if(success && success.length > 0) { %>
-        <div class="alert alert-success"><p><%= success %></p></div>
-      <% } %>
-    </div>
-  <!-- End message area -->	 
 
     <div class="awscerts">
       <img src="/images/Solutions-Architect-Associate.png">
@@ -25,7 +13,15 @@
     </div>
 
    <div class="blogTitle"><h1>Learn</h1></div>
-   <div class="blogText blogPost"><p>When I lost my job, I was first and foremost shocked. I did not expect it.  I decided to start a transformation journey by diving deeper into Amazon Web Services (AWS).  The best way in my opinion was to get certified.  After 6 weeks of studying and preparation, I obtained all three Associate Level certifications.  The certifications have <strong>not</strong> been enough to entice employers, so I continued the transformation journey by brushing off my coding skills.  I had not coded for a long time and needed a refresher.  I signed up for two bootcamp courses on Node, Javascript, HTML, CSS.</p></div> 
+   <div class="blogText blogPost"><p>When I lost my job, I was first and foremost shocked. 
+   I did not expect it.  I decided to start a transformation journey by diving deeper into 
+   Amazon Web Services (AWS).  The best way in my opinion was to get certified.  
+   After 6 weeks of studying and preparation, I obtained all three Associate Level certifications.
+     I continued the transformation journey by brushing off my coding skills.  
+     I had not coded for a long time and needed a refresher.  
+     I signed up for two bootcamp courses on NodeJS, Javascript, HTML, CSS.
+     This dovetailed into an exploration into serverless computing.  This is now run 
+     on S3, Lambda and DynamoDB, saving the cost of keeping a server running 24/7, however small.</p></div> 
    
    <div class="blogTitle"><h1>Build</h1></div>
    <div class="blogText blogPost"><p>Below are some "highlights" of my journey - simple applications that were in the courses that I replicated and built up.</p></div>
@@ -36,6 +32,17 @@
 
    <div class="blogTitle"><h1>Measure</h1></div>
    <div class="blogText blogPost"><p>Send me your feedback!  I would love to hear from you.  You feedback will be valuable to me as I continue to expand my skills.</p></div>
+  
+  <!-- Message area -->
+    <% if(message && message.type === 'success' && message.msg.length > 0) { %>
+      <div class="alert alert-success"><p><%= message.msg %></p></div>
+    <% } %>    
+    
+    <% if(message && message.type === 'error' && message.msg.length > 0) { %>
+      <div class="alert alert-danger"><p><%= message.msg %></p></div>
+    <% } %>    
+
+  <!-- End message area -->	 
 
    <form action="/feedback" method="POST">
     <div class="containerBox">

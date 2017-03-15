@@ -23,6 +23,13 @@ hr {
   float: left;
 } 
 
+.alert {
+    padding: 3px;
+    padding-left: 6px;
+    width: 50%;
+    position: left;
+}
+
 .glyphicon-asterisk {
     font-size: .5em;
     vertical-align: super;
