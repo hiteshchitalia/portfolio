@@ -1,5 +1,5 @@
 <% include partials/header %>
-<link rel="stylesheet" type="text/css" href="/css/movies.css">
+<link rel="stylesheet" type="text/css" href="<%= cdnPath %>/css/movies.css">
 
   <div class="container">
     <div class="jumbotron">Results of the search query: <%= query %></div>
@@ -12,6 +12,7 @@
         <% }) %>
         </ul>
         <a class="btn btn-primary" href="/moviesearch" role="button">Search Again</a>
+        <a class="btn btn-primary" href="/home" role="button">Home</a>
   </div>
   </div>
 

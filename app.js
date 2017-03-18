@@ -21,7 +21,7 @@ var docClient = new AWS.DynamoDB.DocumentClient()
 app.set('view engine', 'ejs')
 app.set('port', process.env.PORT || 3000)
 app.set('host', process.env.HOST || 'localhost')
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(cookieParser('my Little secret'))
@@ -36,6 +36,7 @@ app.use(session({
 app.use(function (req, res, next) {
   res.locals.message = req.session.msg
   delete req.session.msg
+  res.locals.cdnPath = 'https://d28yqlnhqzu0k4.cloudfront.net'
   next()
 })
 
@@ -113,9 +114,9 @@ app.post('/feedback', function (req, res) {
     })
 })
 
-app.listen(app.get('port'), app.get('host'), function () {
-  console.log('App started on http://' + app.get('host') + ':' +
-   app.get('port') + '; press Ctrl-C to terminate.')
-})
+// app.listen(app.get('port'), app.get('host'), function () {
+//   console.log('App started on http://' + app.get('host') + ':' +
+//    app.get('port') + '; press Ctrl-C to terminate.')
+// })
 
-// module.exports = app;
+module.exports = app;

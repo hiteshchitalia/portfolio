@@ -1,5 +1,5 @@
 <% include partials/header %>
-<link rel="stylesheet" type="text/css" href="/css/movies.css">
+<link rel="stylesheet" type="text/css" href="<%= cdnPath %>/css/movies.css">
 
   <div class="container">
     <div class="jumbotron">Details for <%= movie.Title %></div>
@@ -18,6 +18,7 @@
           <li class="list-group-item"><strong>Plot</strong> : <%= movie.Plot %></li>
         </ul>    
       <button type="button" class="btn btn-primary" onclick="javascript:history.back()">Back</button>
+      <a class="btn btn-primary" href="/home" role="button">Home</a>
       </div>
     </div>    
   </div>

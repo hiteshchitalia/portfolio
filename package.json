@@ -8,6 +8,11 @@
   },
   "author": "Hitesh Chitalia",
   "license": "ISC",
+  "scripts": {
+    "deploy": "claudia create --handler lambda.handler --deploy-proxy-api --region us-east-1",
+    "update": "claudia update",
+    "generate-proxy": "claudia generate-serverless-express-proxy --express-module app"
+  },
   "dependencies": {
     "aws-sdk": "^2.27.0",
     "aws-serverless-express": "^2.1.3",

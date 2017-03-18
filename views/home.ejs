@@ -7,9 +7,9 @@
      </div>
 
     <div class="awscerts">
-      <img src="/images/Solutions-Architect-Associate.png">
-      <img src="/images/Developer-Associate.png">
-      <img src="/images/SysOps-Administrator-Associate.png">
+      <img src="<%= cdnPath %>/images/Solutions-Architect-Associate.png">
+      <img src="<%= cdnPath %>/images/Developer-Associate.png">
+      <img src="<%= cdnPath %>/images/SysOps-Administrator-Associate.png">
     </div>
 
    <div class="blogTitle"><h1>Learn</h1></div>
@@ -20,8 +20,8 @@
      I continued the transformation journey by brushing off my coding skills.  
      I had not coded for a long time and needed a refresher.  
      I signed up for two bootcamp courses on NodeJS, Javascript, HTML, CSS.
-     This dovetailed into an exploration into serverless computing.  This is now run 
-     on S3, Lambda and DynamoDB, saving the cost of keeping a server running 24/7, however small.</p></div> 
+     This dovetailed into an exploration of serverless computing.  This site is now run 
+     on S3, Lambda and DynamoDB, saving the cost of keeping a server running 24/7.</p></div> 
    
    <div class="blogTitle"><h1>Build</h1></div>
    <div class="blogText blogPost"><p>Below are some "highlights" of my journey - simple applications that were in the courses that I replicated and built up.</p></div>
@@ -31,7 +31,8 @@
     <a class="btn btn-primary" role="button" href="/moviesearch">Movie Search using OMDb API</a>
 
    <div class="blogTitle"><h1>Measure</h1></div>
-   <div class="blogText blogPost"><p>Send me your feedback!  I would love to hear from you.  You feedback will be valuable to me as I continue to expand my skills.</p></div>
+   <div class="blogText blogPost"><p>Send me your feedback!  I would love to hear from you.  
+   Your feedback will be valuable to me as I continue to expand my skills.  The feedback is anonymous, but please be considerate.</p></div>
   
   <!-- Message area -->
     <% if(message && message.type === 'success' && message.msg.length > 0) { %>
@@ -55,7 +56,14 @@
    </form>
 
    <div class="blogTitle"><h1>Innovate</h1></div>
-   <div class="blogText blogPost"><p>Use AWS services and serverless computing for future sample apps as I prepare for the AWS Professional Level certifications. </p></div>
+   <div class="blogText blogPost"><p>Use AWS services and serverless computing to reduce hosting costs.  I started out using an EC server to host this site.
+   The process of updating the app, while small, was a challenge having to set an FTP server to push updates to the correct directory.
+   I then converted my site to use Elastic Beanstalk.  This made updates a snap, and ensured a server was always running.  However, a server had to be run.
+   A t1.micro for 72 hrs cost approximately $1.44.  Over the course of a couple of months, this adds up!</p><p>Serverless hosting to the rescue. 
+   This site is now hosted on S3 for static assets, ClaudiaJS to convert the Express app to a Lambda funciton and push updates to Lambda, 
+   Lambda for NodeJS processing, API Gateway to front the Lambda function and DynamoDB (used to be MongoDB)
+   for storing your feedback.  The cost is significantly lower (almost 0!).  I am charged only when the site is visited.  Pretty cool!</p>
+   <p>Other AWS services include Route 53, CloudFront, IAM Roles and Certificate Manager</div>
 
   </div>
 

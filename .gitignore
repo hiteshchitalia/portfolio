@@ -3,6 +3,8 @@ node_modules/
 .vscode
 user-data.txt
 .gitignore
+claudia.json
+lambda.js
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
